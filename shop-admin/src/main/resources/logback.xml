@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+        <Pattern>[%d{yyyy-MM-dd HH:mm:ss}] %level [%thread] %class:%line --> %msg%n</Pattern>
+    </encoder>
+  </appender>
+
+ <appender name="mainfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <Append>true</Append>
+    <File>../logs/eshop/eshop.log</File>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+    	<pattern>%d{yyyy/MM/dd-HH:mm:ss.SSS} %level [%thread] %class:%line --> %msg%n</pattern>
+  	</encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <FileNamePattern>../logs/eshop/eshop-%d{yyyy-MM-dd}.log</FileNamePattern>
+      <!-- keep 60 days worth of history -->
+      <MaxHistory>60</MaxHistory>
+    </rollingPolicy>
+  </appender>
+  
+  <appender name="errorLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <Append>true</Append>
+    <File>../logs/eshop/eshop-error.log</File>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+    	<pattern>%d{yyyy/MM/dd-HH:mm:ss.SSS} %level [%thread] %class:%line --> %msg%n</pattern>
+  	</encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <FileNamePattern>../logs/eshop/eshop-error-%d{yyyy-MM-dd}.log</FileNamePattern>
+      <!-- keep 60 days worth of history -->
+      <MaxHistory>120</MaxHistory>
+    </rollingPolicy>
+  </appender>
+  
+  
+<!--Logger可以被分配级别。级别包括：TRACE、DEBUG、INFO、WARN和ERROR，定义于ch.qos.logback.classic.Level类。程序会打印高于或等于所设置级别的日志，设置的日志等级越高，打印出来的日志就越少。 -->
+<!--如果设置级别为INFO，则优先级高于等于INFO级别（如：INFO、 WARN、ERROR）的日志信息将可以被输出,小于该级别的如DEBUG将不会被输出。为确保所有logger都能够最终继承一个级别，根logger总是有级别，默认情况下，这个级别是DEBUG。 -->
+  <logger name="com.anhry.app.shop" level="TRACE">
+      	<appender-ref ref="mainfile"/>
+  </logger>
+  
+  <logger name="com.anhry.app" level="ERROR">
+      	<appender-ref ref="errorLogFile"/>
+  </logger>
+  <logger name="dao" level="DEBUG"/>
+  <root level="info">
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="mainfile" />
+  </root>
+</configuration>
