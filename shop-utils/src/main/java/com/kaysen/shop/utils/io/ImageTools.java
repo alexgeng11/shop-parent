@@ -60,8 +60,9 @@ public class ImageTools {
 					targetH);
 			boolean alphaPremultiplied = cm.isAlphaPremultiplied();
 			target = new BufferedImage(cm, raster, alphaPremultiplied, null);
-		} else
-			target = new BufferedImage(targetW, targetH, type);
+		} else {
+            target = new BufferedImage(targetW, targetH, type);
+        }
 		Graphics2D g = target.createGraphics();
 		// smoother than exlax:
 		g.setRenderingHint(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_QUALITY);

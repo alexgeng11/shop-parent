@@ -33,6 +33,7 @@ public class RedisCacheImpl implements RedisCache {
 	 * @param map key：对应的reids的key， value：对应每个key的value
 	 * 示例：MSET key1 "Hello" key2 "World
 	 */
+	@Override
 	public void mset(Map<String,Object> map){
 		ValueOperations<String, Object> ops=redis.opsForValue();
 		ops.multiSet(map);
@@ -43,6 +44,7 @@ public class RedisCacheImpl implements RedisCache {
 	 * @param keys
 	 * @return
 	 */
+	@Override
 	public List<Object> mget(List<String> keys){
 		ValueOperations<String, Object> ops=redis.opsForValue();
 		return ops.multiGet(keys);
@@ -52,6 +54,7 @@ public class RedisCacheImpl implements RedisCache {
 	 * 单个key存储， 注意：批量插入请尽量使用mset方法，否则效率非常低，而且事务不好处理
 	 * 
 	 */
+	@Override
 	public void set(String key, Object value) {
 		ValueOperations<String, Object> valueOper=redis.opsForValue();
 		valueOper.set(key, value);
@@ -63,6 +66,7 @@ public class RedisCacheImpl implements RedisCache {
 	 * @param value 
 	 * @param timeOut 过期时间 单位：s
 	 */
+	@Override
 	public void set(String key, Object value, long timeOut) {
 		ValueOperations<String, Object> valueOper=redis.opsForValue();
 		valueOper.set(key, value, timeOut,TimeUnit.SECONDS);
@@ -79,6 +83,7 @@ public class RedisCacheImpl implements RedisCache {
 	 * @param odlKey
 	 * @param newKey
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public void rename(final String odlKey, final String newKey) {
 		redis.rename(odlKey, newKey);
@@ -103,6 +108,7 @@ public class RedisCacheImpl implements RedisCache {
 	 * @param key
 	 * @return
 	 */
+	@Override
 	public boolean exists(final String key) {
 		return redis.hasKey(key);
 //		return (boolean) redis.execute(new RedisCallback() {
@@ -118,7 +124,8 @@ public class RedisCacheImpl implements RedisCache {
 	 * @param timeout 失效的时间点
 	 * @return
 	 */
-	public boolean expireAt(String key,Date timeout){
+	@Override
+	public boolean expireAt(String key, Date timeout){
 		return redis.expireAt(key, timeout);
 	}
 	
@@ -129,7 +136,8 @@ public class RedisCacheImpl implements RedisCache {
 	 * @param unit 时间单位，天：TimeUnit.DAYS 小时TimeUnit.HOURS  秒：TimeUnit. SECONDS   毫秒：TimeUnit.MILLISECONDS  微秒：TimeUnit.MICROSECONDS  纳秒：TimeUnit.NANOSECONDS
 	 * @return
 	 */
-	public boolean expire(String key,long timeout,TimeUnit unit){
+	@Override
+	public boolean expire(String key, long timeout, TimeUnit unit){
 		return redis.expire(key, timeout, unit);
 	}
 	
@@ -148,6 +156,7 @@ public class RedisCacheImpl implements RedisCache {
 	 *         匹配 hello 和 hallo, 但是不匹配 hillo h[^e]llo 匹配 hallo, hbllo, … 但是不匹配
 	 *         hello h[a-b]llo 匹配 hallo 和 hbllo
 	 */
+	@Override
 	public Set<String> keys(String pattern) {
 		return redis.keys(pattern);
 
@@ -157,8 +166,10 @@ public class RedisCacheImpl implements RedisCache {
 	 * 返回key的数量
 	 * @return
 	 */
+	@Override
 	public long dbSize() {
 		return (long) redis.execute(new RedisCallback() {
+			@Override
 			public Long doInRedis(RedisConnection connection) throws DataAccessException {
 				return connection.dbSize();
 			}
@@ -170,8 +181,10 @@ public class RedisCacheImpl implements RedisCache {
 	 * 如果客户端处于频道订阅模式下，它将是一个multi-bulk返回，第一次时返回”pong”，之后返回空（empty bulk），除非命令后面更随了参数。
 	 * @return
 	 */
+	@Override
 	public String ping() {
 		return (String) redis.execute(new RedisCallback() {
+			@Override
 			public String doInRedis(RedisConnection connection) throws DataAccessException {
 				return connection.ping();
 			}
@@ -188,12 +201,14 @@ public class RedisCacheImpl implements RedisCache {
 	 * @param key
 	 * @param objMap 需要存储的map对象
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public void saveMapAll(String key, Map objMap){
 		BoundHashOperations<String, String, String> ops = redis.boundHashOps(key);
 		ops.putAll(objMap);
 	}
 	
+	@Override
 	@SuppressWarnings("unchecked")
 	public void saveMapKey(String mapName,String mapKey,Object value){
 		BoundHashOperations<String, String, Object> ops = redis.boundHashOps(mapName);
@@ -204,6 +219,7 @@ public class RedisCacheImpl implements RedisCache {
 	 * 获取整个MAP，包括key与value，
 	 * @param key规定以对象类名+ID的形式组成
 	 */
+	@Override
 	public Map<String,Object> hGetAll(String key) {
 		BoundHashOperations<String, String, Object> ops = redis.boundHashOps(key);
 		return ops.entries();
@@ -212,7 +228,8 @@ public class RedisCacheImpl implements RedisCache {
 	 * 获取MAP的某个key值
 	 * @param key规定以对象类名+ID的形式组成
 	 */
-	public Object hGet(String key,String mapKey) {
+	@Override
+	public Object hGet(String key, String mapKey) {
 		BoundHashOperations<String, String, Object> ops = redis.boundHashOps(key);
 		return ops.get(mapKey);
 	}
@@ -221,7 +238,8 @@ public class RedisCacheImpl implements RedisCache {
 	 * 获取MAP的某几个key值，
 	 * @param key规定以对象类名+ID的形式组成
 	 */
-	public Object hMget(final String key,List<String> keys) {
+	@Override
+	public Object hMget(final String key, List<String> keys) {
 		BoundHashOperations<String, String, Object> ops = redis.boundHashOps(key);
 		return ops.multiGet(keys);
 	}
@@ -237,9 +255,11 @@ public class RedisCacheImpl implements RedisCache {
 	 *         connection) throws DataAccessException { connection.flushDb();
 	 *         return "ok"; } }); }
 	 */
+	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public String flushDB() {
 		return (String) redis.execute(new RedisCallback() {
+			@Override
 			public String doInRedis(RedisConnection connection) throws DataAccessException {
 				connection.flushDb();
 				return "ok";

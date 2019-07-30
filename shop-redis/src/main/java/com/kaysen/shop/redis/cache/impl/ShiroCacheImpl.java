@@ -57,6 +57,7 @@ public class ShiroCacheImpl<K,V> implements Cache<K,V> {
 	@Override
 	public int size() {
 		return (int) redis.execute(new RedisCallback() {
+			@Override
 			public Long doInRedis(RedisConnection connection) throws DataAccessException {
 				return connection.dbSize();
 			}

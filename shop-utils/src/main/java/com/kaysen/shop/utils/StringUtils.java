@@ -602,45 +602,45 @@ public class StringUtils extends org.apache.commons.lang.StringUtils{
 		str=str.trim();
 		// 如果type是类类型，则前面包含"class "，后面跟类名
 		//如果类型是String
-		if (objectClass.equals("class java.lang.String")) { 
+		if ("class java.lang.String".equals(objectClass)) {
 			return str;
 		}
 		// 如果类型是Integer
-		else if (objectClass.equals("class java.lang.Integer")) {
+		else if ("class java.lang.Integer".equals(objectClass)) {
 			if(isNumeric(str)){
 				return Integer.valueOf(str);
 			}
 		}
 		// 如果类型是Double
-		else if (objectClass.equals("class java.lang.Double")) {
+		else if ("class java.lang.Double".equals(objectClass)) {
 			if(isNumeric(str)){
 				return Double.valueOf(str);
 			}
 		}
 		// 如果类型是Boolean 是封装类
-		else if (objectClass.equals("class java.lang.Boolean")) {
-			if(str.equals("1")||str.equals("true")){
+		else if ("class java.lang.Boolean".equals(objectClass)) {
+			if("1".equals(str)|| "true".equals(str)){
 				return true;
-			}else if(str.equals("0")||str.equals("false")){
+			}else if("0".equals(str)|| "false".equals(str)){
 				return false;
 			}
 		}
 		// 如果类型是Short
-		else if (objectClass.equals("class java.lang.Short")) {
+		else if ("class java.lang.Short".equals(objectClass)) {
 			if(isNumeric(str)){
 				return Short.valueOf(str);
 			}
 		}
 		// 如果类型是boolean 基本数据类型不一样 不需要class
-		else if (objectClass.equals("boolean")) {
-			if(str.equals("1")||str.equals("true")){
+		else if ("boolean".equals(objectClass)) {
+			if("1".equals(str)|| "true".equals(str)){
 				return true;
-			}else if(str.equals("0")||str.equals("false")){
+			}else if("0".equals(str)|| "false".equals(str)){
 				return false;
 			}
 		}
 		//	如果类型是int
-		else if (objectClass.equals("int")) {
+		else if ("int".equals(objectClass)) {
 			if(isNumeric(str)){
 				return Integer.parseInt(str);
 			}
