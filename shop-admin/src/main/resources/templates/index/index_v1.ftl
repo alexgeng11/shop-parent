@@ -233,11 +233,11 @@
                                                         </div>
                                                 </td>
                                                 <td class="project-people">
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a3.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a1.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a2.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a4.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a5.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a3.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a1.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a2.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a4.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a5.jpg"></a>
                                                 </td>
                                                 <td class="project-actions">
                                                     <a href="projects.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看 </a>
@@ -260,9 +260,9 @@
                                                     </div>
                                                 </td>
                                                 <td class="project-people">
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a7.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a6.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a3.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a7.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a6.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a3.jpg"></a>
                                                 </td>
                                                 <td class="project-actions">
                                                     <a href="projects.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看 </a>
@@ -285,8 +285,8 @@
                                                     </div>
                                                 </td>
                                                 <td class="project-people">
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a5.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a3.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a5.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a3.jpg"></a>
                                                 </td>
                                                 <td class="project-actions">
                                                     <a href="projects.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看 </a>
@@ -309,10 +309,10 @@
                                                     </div>
                                                 </td>
                                                 <td class="project-people">
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a2.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a3.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a1.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a7.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a2.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a3.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a1.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a7.jpg"></a>
                                                 </td>
                                                 <td class="project-actions">
                                                     <a href="projects.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看 </a>
@@ -335,7 +335,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="project-people">
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a4.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a4.jpg"></a>
                                                 </td>
                                                 <td class="project-actions">
                                                     <a href="projects.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看 </a>
@@ -358,10 +358,10 @@
                                                     </div>
                                                 </td>
                                                 <td class="project-people">
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a1.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a2.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a4.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a5.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a1.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a2.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a4.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a5.jpg"></a>
                                                 </td>
                                                 <td class="project-actions">
                                                     <a href="projects.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看 </a>
@@ -384,9 +384,9 @@
                                                     </div>
                                                 </td>
                                                 <td class="project-people">
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a7.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a6.jpg"></a>
-                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a3.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a7.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a6.jpg"></a>
+                                                    <a href="projects.html"><img alt="image" class="img-circle" src="${req.contextPath}/static/img/a3.jpg"></a>
                                                 </td>
                                                 <td class="project-actions">
                                                     <a href="projects.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看 </a>
@@ -602,10 +602,10 @@
     <!-- 全局js -->
     <#include '/common/common-js.ftl'>
     <!-- Flot -->
-    <script src="${req.contextPath}/resource/js/plugins/flot/jquery.flot.js"></script>
-    <script src="${req.contextPath}/resource/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="${req.contextPath}/resource/js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="${req.contextPath}/resource/js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="${req.contextPath}/static/js/plugins/flot/jquery.flot.js"></script>
+    <script src="${req.contextPath}/static/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="${req.contextPath}/static/js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="${req.contextPath}/static/js/plugins/flot/jquery.flot.pie.js"></script>
 
     <script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
     <script src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>

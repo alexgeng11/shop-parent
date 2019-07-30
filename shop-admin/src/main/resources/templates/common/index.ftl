@@ -375,7 +375,7 @@
                             <li class="m-t-xs">
                                 <div class="dropdown-messages-box">
                                     <a href="profile.html" class="pull-left">
-                                        <img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a7.jpg">
+                                        <img alt="image" class="img-circle" src="${req.contextPath}/static/img/a7.jpg">
                                     </a>
                                     <div class="media-body">
                                         <small class="pull-right">46小时前</small>
@@ -389,7 +389,7 @@
                             <li>
                                 <div class="dropdown-messages-box">
                                     <a href="profile.html" class="pull-left">
-                                        <img alt="image" class="img-circle" src="${req.contextPath}/resource/img/a4.jpg">
+                                        <img alt="image" class="img-circle" src="${req.contextPath}/static/img/a4.jpg">
                                     </a>
                                     <div class="media-body ">
                                         <small class="pull-right text-navy">25小时前</small>
@@ -456,11 +456,11 @@
 <#include '/common/common-js.ftl'>
 
 <!-- 自定义js -->
-<script src="${req.contextPath}/resource/js/hAdmin.js?v=4.1.0"></script>
-<script type="text/javascript" src="${req.contextPath}/resource/js/index.js"></script>
+<script src="${req.contextPath}/static/js/hAdmin.js?v=4.1.0"></script>
+<script type="text/javascript" src="${req.contextPath}/static/js/index.js"></script>
 
 <!-- 第三方插件 -->
-<script src="${req.contextPath}/resource/js/plugins/pace/pace.min.js"></script>
+<script src="${req.contextPath}/static/js/plugins/pace/pace.min.js"></script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <#include '/common/common-css.ftl'>
-    <link href="${req.contextPath}/resource/css/login.css" rel="stylesheet">
+    <link href="${req.contextPath}/static/css/login.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
