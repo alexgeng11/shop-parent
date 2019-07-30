@@ -1,10 +1,10 @@
 package com.kaysen.shop.web.system.service;
 
 /**
- * @Classname ISystemUserService
+ * @Classname SystemMenuService
  * @Description TODO
- * @Date 2019/7/19 11:09
+ * @Date 2019/7/19 11:07
  * @Created by ks.xu
  */
-public interface ISystemUserService {
+public interface SystemMenuService {
 }
