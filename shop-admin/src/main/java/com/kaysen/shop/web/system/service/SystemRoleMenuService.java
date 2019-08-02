@@ -1,7 +1,6 @@
 package com.kaysen.shop.web.system.service;
 
-import com.kaysen.shop.bean.SysRole;
-import com.kaysen.shop.bean.SysRoleMenu;
+import com.kaysen.shop.web.system.bean.SysRoleMenu;
 
 import java.util.List;
 

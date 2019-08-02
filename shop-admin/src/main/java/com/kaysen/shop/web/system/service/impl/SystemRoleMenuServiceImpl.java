@@ -1,8 +1,7 @@
 package com.kaysen.shop.web.system.service.impl;
 
-import com.kaysen.shop.bean.SysRoleMenu;
+import com.kaysen.shop.web.system.bean.SysRoleMenu;
 import com.kaysen.shop.web.system.service.SystemRoleMenuService;
-import com.kaysen.shop.web.system.service.SystemRoleService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

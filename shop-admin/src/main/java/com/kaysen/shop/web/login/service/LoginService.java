@@ -1,6 +1,6 @@
 package com.kaysen.shop.web.login.service;
 
-import com.kaysen.shop.bean.SysUser;
+import com.kaysen.shop.web.system.bean.SysUser;
 
 /**
  * @Classname LoginService

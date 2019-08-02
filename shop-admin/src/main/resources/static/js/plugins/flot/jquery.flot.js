@@ -731,7 +731,7 @@
 
         function setupCanvases() {
             var reused,
-                existingCanvas = placeholder.children("canvas.base"),
+                existingCanvas = placeholder.children("canvas.kaysen.base.js"),
                 existingOverlay = placeholder.children("canvas.overlay");
 
             if (existingCanvas.length == 0 || existingOverlay == 0) {
@@ -746,7 +746,7 @@
 
                 getCanvasDimensions();
 
-                canvas = makeCanvas(true, "base");
+                canvas = makeCanvas(true, "kaysen.base.js");
                 overlay = makeCanvas(false, "overlay"); // overlay canvas for interactive features
 
                 reused = false;

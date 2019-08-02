@@ -1,8 +1,13 @@
 package com.kaysen.shop.web.index.controller;
 
 import com.kaysen.shop.utils.SystemUtils;
+import com.kaysen.shop.web.system.bean.SysUser;
+import com.kaysen.shop.web.system.service.SysUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 /**
  * @title: IndexController
@@ -12,15 +17,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class IndexController {
+    @Autowired
+    private SysUserService sysUserService;
     /**
      * 后台首页
      * @return
      */
-    @RequestMapping("/system/mian")
+    @RequestMapping("/system/main")
     private String index(){
-        System.out.println(SystemUtils.getOSType());
-        System.out.println(SystemUtils.isLinux());
-        System.out.println(SystemUtils.isWindows());
+        List<SysUser> users=sysUserService.listAllUser();
+        for (SysUser sysUser: users) {
+            System.out.println(sysUser.getRealName());
+        }
         return "/common/index";
     }
 

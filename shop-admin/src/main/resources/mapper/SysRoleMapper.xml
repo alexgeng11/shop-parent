@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kaysen.shop.web.system.dao.SysRoleMapper">
+  <resultMap id="BaseResultMap" type="com.kaysen.shop.web.system.bean.SysRole">
+    <!--@mbg.generated generated on Fri Aug 02 13:25:54 CST 2019.-->
+    <id column="ID" property="id" />
+    <result column="IS_DELE" property="isDele" />
+    <result column="ENABLED" property="enabled" />
+    <result column="NAME" property="name" />
+    <result column="REMARK" property="remark" />
+    <result column="ADD_TIME" property="addTime" />
+    <result column="ADD_USER_ID" property="addUserId" />
+    <result column="ADD_USER_NAME" property="addUserName" />
+    <result column="TERMINAL_TYPE" property="terminalType" />
+    <result column="FULL_SPELL" property="fullSpell" />
+    <result column="LIST_SORT" property="listSort" />
+    <result column="ABBREVATION" property="abbrevation" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Fri Aug 02 13:25:54 CST 2019.-->
+    ID, IS_DELE, ENABLED, `NAME`, REMARK, ADD_TIME, ADD_USER_ID, ADD_USER_NAME, TERMINAL_TYPE, 
+    FULL_SPELL, LIST_SORT, ABBREVATION
+  </sql>
+</mapper>

@@ -217,7 +217,7 @@ public class RedisCacheImpl implements RedisCache {
 	
 	/**
 	 * 获取整个MAP，包括key与value，
-	 * @param key规定以对象类名+ID的形式组成
+	 * @param key 规定以对象类名+ID的形式组成
 	 */
 	@Override
 	public Map<String,Object> hGetAll(String key) {
@@ -226,7 +226,7 @@ public class RedisCacheImpl implements RedisCache {
 	}
 	/**
 	 * 获取MAP的某个key值
-	 * @param key规定以对象类名+ID的形式组成
+	 * @param key 规定以对象类名+ID的形式组成
 	 */
 	@Override
 	public Object hGet(String key, String mapKey) {
@@ -236,7 +236,7 @@ public class RedisCacheImpl implements RedisCache {
 	
 	/**
 	 * 获取MAP的某几个key值，
-	 * @param key规定以对象类名+ID的形式组成
+	 * @param key 规定以对象类名+ID的形式组成
 	 */
 	@Override
 	public Object hMget(final String key, List<String> keys) {

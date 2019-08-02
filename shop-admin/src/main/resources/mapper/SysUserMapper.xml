@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kaysen.shop.web.system.dao.SysUserMapper">
+  <resultMap id="BaseResultMap" type="com.kaysen.shop.web.system.bean.SysUser">
+    <!--@mbg.generated generated on Fri Aug 02 13:28:00 CST 2019.-->
+    <id column="ID" property="id" />
+    <result column="HEAD_PORTRAIT" property="headPortrait" />
+    <result column="IS_DELE" property="isDele" />
+    <result column="ENABLED" property="enabled" />
+    <result column="USER_NAME" property="userName" />
+    <result column="REAL_NAME" property="realName" />
+    <result column="PASSWORD" property="password" />
+    <result column="ADD_TIME" property="addTime" />
+    <result column="ADD_USER_ID" property="addUserId" />
+    <result column="ADD_USER_NAME" property="addUserName" />
+    <result column="TERMINAL_TYPE" property="terminalType" />
+    <result column="LIST_SORT" property="listSort" />
+    <result column="USER_TYPE" property="userType" />
+    <result column="CATALOG_ID" property="catalogId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Fri Aug 02 13:28:00 CST 2019.-->
+    ID, HEAD_PORTRAIT, IS_DELE, ENABLED, USER_NAME, REAL_NAME, `PASSWORD`, ADD_TIME, 
+    ADD_USER_ID, ADD_USER_NAME, TERMINAL_TYPE, LIST_SORT, USER_TYPE, CATALOG_ID
+  </sql>
+</mapper>

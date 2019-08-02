@@ -24,7 +24,7 @@ public class ShiroCacheImpl<K,V> implements Cache<K,V> {
 	@Resource
     RedisTemplate<K, V> redis;
 
-	private Integer timeout ;//超时时间，单位为小时  修改By：zhangsong20160621
+	private Integer timeout=1 ;//超时时间，单位为小时  修改By：zhangsong20160621
 
 	@Override
 	public void clear() throws CacheException {
