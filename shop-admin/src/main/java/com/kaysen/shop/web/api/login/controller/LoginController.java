@@ -66,7 +66,6 @@ public class LoginController extends BaseController {
             Subject subject = SecurityUtils.getSubject();
             Session session = subject.getSession();
             UsernamePasswordToken token = new UsernamePasswordToken(USERNAME, sysUser.getPassword());
-            System.out.println(session.getId());
             map.put("isAccess", false);
             try {
                 subject.login(token);

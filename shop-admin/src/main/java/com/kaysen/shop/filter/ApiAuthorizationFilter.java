@@ -1,19 +1,15 @@
 package com.kaysen.shop.filter;
 
 import com.alibaba.fastjson.JSONObject;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;
-import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
 
-import javax.servlet.*;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * @Classname ExtendRolesAuthorizationFilter
@@ -23,17 +19,6 @@ import java.io.IOException;
  */
 public class ApiAuthorizationFilter extends AccessControlFilter {
     private static final PathMatcher pathMatcher = new AntPathMatcher();
-    private SecurityManager securityManager;
-
-
-    public SecurityManager getSecurityManager() {
-        return securityManager;
-    }
-
-    public void setSecurityManager(SecurityManager securityManager) {
-        this.securityManager = securityManager;
-    }
-
     @Override
     protected boolean isAccessAllowed(ServletRequest servletRequest, ServletResponse servletResponse, Object o) {
         HttpServletRequest request=(HttpServletRequest)servletRequest;

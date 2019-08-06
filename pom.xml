@@ -24,6 +24,7 @@
         <module>shop-utils</module>
         <module>shop-admin</module>
         <module>shop-redis</module>
+        <module>shop-pay</module>
     </modules>
 
     <dependencies>
@@ -116,6 +117,11 @@
             <version>1.3.2</version>
         </dependency>
         <!--日志相关-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.54</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>shop</finalName>

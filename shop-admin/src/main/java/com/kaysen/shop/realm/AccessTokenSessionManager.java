@@ -27,7 +27,7 @@ public class AccessTokenSessionManager extends DefaultWebSessionManager {
                 try {
                     //取回session，作用是判断前端传得sessionid有没有效，没有就会抛出异常，然后走正常流程取sessionid
                     Session session = retrieveSessionFromDataSource(sessionId);
-                    System.out.println("Access-Token:" + session.getId());
+//                    System.out.println("Access-Token:" + session.getId());
                     //返回前端传的sessionid
                     return sessionId;
                 } catch (Exception e) {

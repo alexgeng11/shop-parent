@@ -22,7 +22,7 @@ import java.time.Duration;
 
 /**
  * @Classname ShiroConfiguration
- * @Description TODO
+ * @Description redis相关配置
  * @Date 2019/7/29 13:42
  * @Created by ks.xu
  */
