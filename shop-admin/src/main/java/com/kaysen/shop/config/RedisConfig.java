@@ -28,7 +28,7 @@ import java.time.Duration;
  */
 @Configuration
 @AutoConfigureBefore(org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration.class)
-public class RedisConfiguration {
+public class RedisConfig {
 
     /**
      * 生成key的策略

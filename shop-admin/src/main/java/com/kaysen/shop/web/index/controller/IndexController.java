@@ -1,6 +1,5 @@
 package com.kaysen.shop.web.index.controller;
 
-import com.kaysen.shop.utils.SystemUtils;
 import com.kaysen.shop.web.system.bean.SysUser;
 import com.kaysen.shop.web.system.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,7 @@ public class IndexController {
     private String index(){
         List<SysUser> users=sysUserService.listAllUser();
         for (SysUser sysUser: users) {
-            System.out.println(sysUser.getRealName());
+//            System.out.println(sysUser.getRealName());
         }
         return "/common/index";
     }

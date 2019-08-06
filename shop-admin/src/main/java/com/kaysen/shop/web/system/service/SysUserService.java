@@ -9,4 +9,5 @@ public interface SysUserService{
 
     List<SysUser> listAllUser();
 
+    SysUser findByUserName(String userName);
 }

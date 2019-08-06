@@ -47,13 +47,7 @@ public class ShiroLoginRealm extends AuthorizingRealm {
         String userName = (String) token.getUsername();                //得到用户名
         SysUser sysUser;
         try {
-            sysUser = new SysUser();
-            sysUser.setEnabled(true);
-            sysUser.setRealName("张三");
-            sysUser.setUserName("zhangsan2");
-            sysUser.setPassword("fb9aa6c8f31fc97e2a8a317b4a953a60ce3d1909");
-//            sysUser.setPassword("11e66917f089728716ae2135e695e75f1ecb956b");
-//            sysUser = systemUserService.findByUserName(userName);
+            sysUser = sysUserService.findByUserName(userName);
             if (sysUser != null) {
                 setSession(Constants.ADMIN_USER, sysUser);
                 setSession(Constants.ADMIN_USER_TYPE, Constants.ADMIN_USER_TYPE_SYS);
@@ -85,6 +79,7 @@ public class ShiroLoginRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         try {
             Set<String> permissions = new HashSet<String>();
+            permissions.add("index");
             SysUser user = (SysUser) SecurityUtils.getSubject().getSession().getAttribute(Constants.ADMIN_USER);
 //            if (user != null) {
 //                String roleIds = "";

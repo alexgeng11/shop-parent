@@ -1,5 +1,7 @@
 package com.kaysen.shop.filter;
 
+import org.apache.shiro.mgt.SecurityManager;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
@@ -10,8 +12,8 @@ import java.io.IOException;
  * @Date 2019/7/29 16:51
  * @Created by ks.xu
  */
-@WebFilter(filterName = "myFilter",urlPatterns = "/*")
 public class ParamsFilter implements Filter {
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
