@@ -1,4 +1,4 @@
-package com.kaysen.shop.config;
+package com.kaysen.shop.realm;
 
 import org.apache.shiro.session.Session;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;

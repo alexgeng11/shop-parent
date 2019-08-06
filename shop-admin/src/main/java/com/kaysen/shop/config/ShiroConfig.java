@@ -1,6 +1,7 @@
 package com.kaysen.shop.config;
 
 import com.kaysen.shop.filter.ApiAuthorizationFilter;
+import com.kaysen.shop.realm.AccessTokenSessionManager;
 import com.kaysen.shop.realm.RetryLimitHashedCredentialsMatcher;
 import com.kaysen.shop.realm.ShiroLoginRealm;
 import com.kaysen.shop.redis.cache.impl.ShiroCacheImpl;
@@ -9,7 +10,6 @@ import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSource
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
