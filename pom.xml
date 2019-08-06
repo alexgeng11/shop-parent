@@ -25,6 +25,8 @@
         <module>shop-admin</module>
         <module>shop-redis</module>
         <module>shop-pay</module>
+        <module>shop-es</module>
+        <module>shop-web</module>
     </modules>
 
     <dependencies>
@@ -124,10 +126,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>shop</finalName>
         <sourceDirectory>${basedir}/src/main/java </sourceDirectory>
-        <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
-        <outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
         <resources>
             <resource>
                 <directory>${basedir}/src/main/resources</directory>
@@ -144,7 +143,6 @@
                     <encoding>utf-8</encoding>
                     <compilerArguments>
                         <verbose/>
-<!--                        <bootclasspath>${java.home}\jre\lib\rt.jar;${java.home}\jre\lib\jce.jar</bootclasspath>-->
                     </compilerArguments>
                 </configuration>
             </plugin>
@@ -154,22 +152,6 @@
                 <version>2.4.3</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-
-            <!--  编译jar�? -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.4</version>
-                <configuration>
-                    <archive>
-                        <addMavenDescriptor>false</addMavenDescriptor>
-                        <manifest>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                        </manifest>
-                    </archive>
                 </configuration>
             </plugin>
         </plugins>

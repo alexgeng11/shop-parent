@@ -1,8 +1,5 @@
 package com.kaysen.shop.utils.io;
 
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
-
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.ImageWriter;
@@ -13,7 +10,10 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 import java.awt.image.WritableRaster;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.Iterator;
 
@@ -210,47 +210,7 @@ public class ImageTools {
 		writer.write(image);
 
 	}
-	
-	/**
-	 * 损失小一些
-	  * 创建图片缩略图(等比缩放)
-	  * @param src 源图片文件完整路径
-	  * @param dist 目标图片文件完整路径
-	  */
-	@SuppressWarnings("restriction")
-	public static void ratioZoom2(File src, File dist, double ratio0) {
-		try {
-			if (!src.exists()) {
-				throw new NullPointerException("文件不存在");
-			}
-			BufferedImage image = ImageIO.read(src);
 
-			// 获得缩放的比例
-			double ratio = 0.0;
-			if (image.getHeight() > 100 || image.getWidth() > 100) {
-				if (image.getHeight() > image.getWidth()) {
-					ratio = ratio0 / image.getHeight();
-				} else {
-					ratio = ratio0 / image.getWidth();
-				}
-			}
-			// 计算新的图面宽度和高度
-			int newWidth = (int) (image.getWidth() * ratio);
-			int newHeight = (int) (image.getHeight() * ratio);
-
-			BufferedImage bfImage = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_RGB);
-			bfImage.getGraphics().drawImage(image.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH), 0, 0,
-					null);
-
-			FileOutputStream os = new FileOutputStream(dist);
-			@SuppressWarnings("restriction")
-			JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(os);
-			encoder.encode(bfImage);
-			os.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 	
 	public static void main(String[] args){
 		try {

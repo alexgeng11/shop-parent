@@ -10,6 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>shop-es</artifactId>
-
+    <build>
+        <finalName>shop-es</finalName>
+    </build>
 
 </project>
