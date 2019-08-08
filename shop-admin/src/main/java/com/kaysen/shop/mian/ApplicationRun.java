@@ -1,6 +1,7 @@
 package com.kaysen.shop.mian;
 
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -19,6 +20,24 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @MapperScan({"com.kaysen.shop.web.**.dao"})
 public class ApplicationRun {
     public static void main(String args[]){
-        SpringApplication.run(ApplicationRun.class,args);
+        System.out.println("                                                                                                                                                 ");
+        System.out.println("          *****                                          *****                                           ****                                    ");
+        System.out.println("          **                   ****                      ***                  ****                       **                  ****                ");
+        System.out.println("        ** ***                     ***                 **  *                       **                  ** *                       **             ");
+        System.out.println("       **             **              **              **          *       **         **              **          *       **         **           ");
+        System.out.println("      **         *    **   **          *              *      **   **      *     *     *             ***     **   **      **    *     **          ");
+        System.out.println("  ***           **    **      **       **         **                 ***              **         **                 ***              ***         ");
+        System.out.println("  ***          *      **        *      **         **          ****         ****       **         **          ****          ****      ***         ");
+        System.out.println("  *****      **       **      *        ********   ****                                ********   ****                                *********   ");
+        System.out.println("      *                     *          *****    *     *            **        **       ******  **    **            **         *       ******   ** ");
+        System.out.println("      *                  **            *              *            **        **       *             **            **         *       **          ");
+        System.out.println("       **          ***                **              **           **  *****          *              **           **  *****          *           ");
+        System.out.println("        **  ***                      **                **          **               **                 **         **               **            ");
+        System.out.println("          **  ******************   **                    ***  *****************   **                     **  ******************  **              ");
+        System.out.println("           ***🐖*                 *                         ****                 **                         ***                 **                 ");
+        System.out.println("                                                                                                                                                 ");
+        SpringApplication springApplication = new SpringApplication(ApplicationRun.class);
+        springApplication.setBannerMode(Banner.Mode.OFF);
+        springApplication.run(args);
     }
 }

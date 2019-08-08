@@ -10,6 +10,9 @@ import java.util.List;
 
 @Service
 public class SysUserServiceImpl implements SysUserService {
+    public SysUserServiceImpl() {
+        System.out.println("############################################");
+    }
 
     @Resource
     private SysUserMapper sysUserMapper;

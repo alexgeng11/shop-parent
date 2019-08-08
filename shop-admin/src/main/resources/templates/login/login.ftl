@@ -42,14 +42,14 @@
                     <div class="control-group">
                         <div class="controls">
                             <label for="email" class="control-label fa fa-user"></label>
-                            <input id="userName" type="text" name="userName" placeholder="用户名" tabindex="1"
+                            <input id="userName" type="text" name="userName" placeholder="用户名" tabindex="1" value="anhry"
                                    autofocus="autofocus" class="form-control input-medium">
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
                             <label for="password" class="control-label fa fa-asterisk"></label>
-                            <input id="password" type="password" name="password" placeholder="密码" tabindex="2"
+                            <input id="password" type="password" name="password" placeholder="密码" tabindex="2" value="Anhry654321"
                                    class="form-control input-medium">
                         </div>
                     </div>
