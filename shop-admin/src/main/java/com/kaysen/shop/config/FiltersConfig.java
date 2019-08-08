@@ -1,13 +1,9 @@
 package com.kaysen.shop.config;
 
 import com.kaysen.shop.filter.ParamsFilter;
-import org.apache.shiro.spring.LifecycleBeanPostProcessor;
-import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
-import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.DependsOn;
 
 /**
  * @Classname FiltersConfig
@@ -15,8 +11,20 @@ import org.springframework.context.annotation.DependsOn;
  * @Date 2019/8/4 20:41
  * @Created by ks.xu
  */
-//@Configuration
+@Configuration
 public class FiltersConfig {
+    /**
+     * 过滤器
+     * @return
+     */
+    ParamsFilter paramsFilter(){
+        return new ParamsFilter();
+    }
+
+    /**
+     * 过滤器注册
+     * @return
+     */
     @Bean
     public FilterRegistrationBean ParamsFilter() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
@@ -29,9 +37,7 @@ public class FiltersConfig {
 
 
 
-    ParamsFilter paramsFilter(){
-        return new ParamsFilter();
-    }
+
 
 
 }

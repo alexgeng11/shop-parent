@@ -44,7 +44,7 @@ public class LoginController extends BaseController {
         ModelAndView mv = new ModelAndView();
         if (subject.isAuthenticated()) {
             mv.setViewName("redirect:/system/main");
-        }else {
+        } else {
             mv.setViewName("/login/login");
         }
 
@@ -115,7 +115,7 @@ public class LoginController extends BaseController {
                 e.printStackTrace();
                 errInfo = SysConstants.WEB_USER_ERROR[0];
                 errMsg = SysConstants.WEB_USER_ERROR[1];
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 errInfo = SysConstants.WEB_USER_ERROR[0];
                 errMsg = SysConstants.WEB_USER_ERROR[1];
@@ -143,7 +143,6 @@ public class LoginController extends BaseController {
 
     /**
      * 用户注销
-     *
      * @return
      */
     @RequestMapping(value = "/logout")
@@ -160,6 +159,18 @@ public class LoginController extends BaseController {
         pd.put("SYSNAME", AppConfig.SYSNAME); //读取系统名称
         mv.setViewName("/login/login");
         mv.addObject("pd", pd);
+        return mv;
+    }
+
+    /**
+     * 没有权限
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/noAuth")
+    public ModelAndView noAuth() throws Exception {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("/error/403");
         return mv;
     }
 }
