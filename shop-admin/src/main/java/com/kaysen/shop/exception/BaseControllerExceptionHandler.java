@@ -29,7 +29,7 @@ import java.util.Map;
  * @author limk
  * @date 2018年4月20日 下午3:37:13
  */
-@RestControllerAdvice
+//@RestControllerAdvice
 public class BaseControllerExceptionHandler {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -40,7 +40,7 @@ public class BaseControllerExceptionHandler {
      * @param e
      * @return
      */
-    @ExceptionHandler(AuthorizationException.class)
+//    @ExceptionHandler(AuthorizationException.class)
     public void valid(AuthorizationException e, HttpServletRequest request, HttpServletResponse response) throws IOException {
         String requestway =request.getHeader("x-requested-with");
         if(StringUtil.isNotEmpty(requestway)){//AJAX

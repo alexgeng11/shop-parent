@@ -80,6 +80,22 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa fa-binoculars"></i>
+                        <span class="nav-label">寻屋</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a class="J_menuItem" href="/map">查看房源</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="graph_flot.html">添加房源</a>
+                        </li>
+
+                    </ul>
+                </li>
                 <li class="line dk"></li>
                 <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
                     <span class="ng-scope">分类</span>
@@ -348,7 +364,6 @@
                         </li>
                     </ul>
                 </li>
-
             </ul>
         </div>
     </nav>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kaysen.shop.web.system.dao.SysRoleMenuMapper">
+  <resultMap id="BaseResultMap" type="com.kaysen.shop.web.system.bean.SysRoleMenu">
+    <!--@mbg.generated generated on Thu Aug 08 16:44:00 CST 2019.-->
+    <id column="ID" property="id" />
+    <result column="IS_DELE" property="isDele" />
+    <result column="ENABLED" property="enabled" />
+    <result column="FUN_ID" property="funId" />
+    <result column="ROLE_ID" property="roleId" />
+    <result column="PERMISSION" property="permission" />
+    <result column="ADD_TIME" property="addTime" />
+    <result column="ADD_USER_ID" property="addUserId" />
+    <result column="ADD_USER_NAME" property="addUserName" />
+    <result column="TERMINAL_TYPE" property="terminalType" />
+    <result column="LIST_SORT" property="listSort" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Thu Aug 08 16:44:00 CST 2019.-->
+    ID, IS_DELE, ENABLED, FUN_ID, ROLE_ID, PERMISSION, ADD_TIME, ADD_USER_ID, ADD_USER_NAME, 
+    TERMINAL_TYPE, LIST_SORT
+  </sql>
+</mapper>

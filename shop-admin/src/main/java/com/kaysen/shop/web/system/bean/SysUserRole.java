@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "sys_role_menu")
-public class SysRoleMenu implements Serializable {
+@Table(name = "sys_user_role")
+public class SysUserRole implements Serializable {
     @Id
     @Column(name = "ID")
     @GeneratedValue(generator = "JDBC")
@@ -24,22 +24,16 @@ public class SysRoleMenu implements Serializable {
     private String enabled;
 
     /**
-     * 菜单ID
-     */
-    @Column(name = "FUN_ID")
-    private Integer funId;
-
-    /**
      * 角色ID
      */
     @Column(name = "ROLE_ID")
     private Integer roleId;
 
     /**
-     * 权限字符串
+     * 用户ID
      */
-    @Column(name = "PERMISSION")
-    private String permission;
+    @Column(name = "USER_ID")
+    private Integer userId;
 
     /**
      * 添加时间
@@ -124,24 +118,6 @@ public class SysRoleMenu implements Serializable {
     }
 
     /**
-     * 获取菜单ID
-     *
-     * @return FUN_ID - 菜单ID
-     */
-    public Integer getFunId() {
-        return funId;
-    }
-
-    /**
-     * 设置菜单ID
-     *
-     * @param funId 菜单ID
-     */
-    public void setFunId(Integer funId) {
-        this.funId = funId;
-    }
-
-    /**
      * 获取角色ID
      *
      * @return ROLE_ID - 角色ID
@@ -160,21 +136,21 @@ public class SysRoleMenu implements Serializable {
     }
 
     /**
-     * 获取权限字符串
+     * 获取用户ID
      *
-     * @return PERMISSION - 权限字符串
+     * @return USER_ID - 用户ID
      */
-    public String getPermission() {
-        return permission;
+    public Integer getUserId() {
+        return userId;
     }
 
     /**
-     * 设置权限字符串
+     * 设置用户ID
      *
-     * @param permission 权限字符串
+     * @param userId 用户ID
      */
-    public void setPermission(String permission) {
-        this.permission = permission;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     /**

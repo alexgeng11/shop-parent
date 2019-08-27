@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class RetryLimitHashedCredentialsMatcher extends HashedCredentialsMatcher {
 
-    private Cache<String, AtomicInteger> passwordRetryCache;
+    private Cache<String, String> passwordRetryCache;
 
     public RetryLimitHashedCredentialsMatcher(CacheManager cacheManager) {
         passwordRetryCache = cacheManager.getCache("shiroCacheImpl");
@@ -30,10 +30,12 @@ public class RetryLimitHashedCredentialsMatcher extends HashedCredentialsMatcher
     public boolean doCredentialsMatch(AuthenticationToken token, AuthenticationInfo info) {
         String username = SysConstants.CACHA_SHIRO_ERRORPASSWORD_NUM+(String) token.getPrincipal();
         // 从缓存中取数据
-        AtomicInteger retryCount = passwordRetryCache.get(username);
-        if (retryCount == null) {
+        String retryCountStr = passwordRetryCache.get(username);
+        AtomicInteger retryCount = null;
+        if (retryCountStr == null) {
             retryCount = new AtomicInteger(1);
         }else{
+            retryCount = new AtomicInteger(Integer.parseInt(retryCountStr));
         	retryCount.incrementAndGet();
         }
         if (retryCount.intValue() > AppConfig.ERROR_PASSWORD_NUM) {   // 错误次数大于5次，就抛异常
@@ -46,7 +48,7 @@ public class RetryLimitHashedCredentialsMatcher extends HashedCredentialsMatcher
             passwordRetryCache.remove(username);
         }else{
         	// 替换缓存中的数据
-            passwordRetryCache.put(username, retryCount);
+            passwordRetryCache.put(username, retryCount.toString());
         }
         return matches;
     }

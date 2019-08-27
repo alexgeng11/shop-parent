@@ -6,7 +6,6 @@ import com.kaysen.shop.utils.log.Logs;
 import com.kaysen.shop.web.system.bean.SysUser;
 import com.kaysen.shop.web.system.service.SysRoleService;
 import com.kaysen.shop.web.system.service.SysUserService;
-import com.kaysen.shop.web.system.service.SystemRoleMenuService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -32,8 +31,6 @@ public class ShiroLoginRealm extends AuthorizingRealm {
     private SysRoleService sysRoleService;
     @Autowired
     private SysUserService sysUserService;
-    @Autowired
-    private SystemRoleMenuService systemRoleMenuService;
 
     /**
      *

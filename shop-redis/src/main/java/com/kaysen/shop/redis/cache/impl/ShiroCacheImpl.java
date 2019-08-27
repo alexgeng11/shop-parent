@@ -1,17 +1,12 @@
 package com.kaysen.shop.redis.cache.impl;
 
+import com.kaysen.shop.redis.cache.RedisDAO;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
-import org.springframework.dao.DataAccessException;
-import org.springframework.data.redis.connection.RedisConnection;
-import org.springframework.data.redis.core.RedisCallback;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 
 import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 /**
  * shiro缓存类
@@ -22,9 +17,8 @@ import java.util.concurrent.TimeUnit;
 public class ShiroCacheImpl<K,V> implements Cache<K,V> {
 
 	@Resource
-    RedisTemplate<K, V> redis;
-
-	private Integer timeout=1 ;//超时时间，单位为小时  修改By：zhangsong20160621
+	RedisDAO redisDAO;
+	private Integer timeout=60*60 ;//超时时间，单位为秒
 
 	@Override
 	public void clear() throws CacheException {
@@ -32,8 +26,8 @@ public class ShiroCacheImpl<K,V> implements Cache<K,V> {
 
 	@Override
 	public V get(K key) throws CacheException {
-		ValueOperations<K, V> ops=redis.opsForValue();
-		return ops.get(key);
+		String s = redisDAO.get(key.toString());
+		return (V) s;
 	}
 
 	@Override
@@ -43,25 +37,19 @@ public class ShiroCacheImpl<K,V> implements Cache<K,V> {
 
 	@Override
 	public V put(K key, V value) throws CacheException {
-		ValueOperations<K, V> valueOper=redis.opsForValue();
-		valueOper.set(key, value, timeout,TimeUnit.HOURS);
+		redisDAO.set(key.toString(), value.toString(),timeout);
 		return get(key);
 	}
 
 	@Override
 	public V remove(K key) throws CacheException {
-		redis.delete(key);
+		redisDAO.delete(key.toString());
 		return null;
 	}
 
 	@Override
 	public int size() {
-		return (int) redis.execute(new RedisCallback() {
-			@Override
-			public Long doInRedis(RedisConnection connection) throws DataAccessException {
-				return connection.dbSize();
-			}
-		});
+		return redisDAO.dbSize().intValue();
 	}
 
 	@Override

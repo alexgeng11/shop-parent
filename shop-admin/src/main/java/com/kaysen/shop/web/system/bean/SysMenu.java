@@ -2,6 +2,7 @@ package com.kaysen.shop.web.system.bean;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 
 @Table(name = "sys_menu")
@@ -409,4 +410,6 @@ public class SysMenu implements Serializable {
     public void setListSort(Integer listSort) {
         this.listSort = listSort;
     }
+
+
 }

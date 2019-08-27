@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kaysen.shop.web.xunwu.dao.SupportAddressMapper">
+  <resultMap id="BaseResultMap" type="com.kaysen.shop.web.xunwu.bean.SupportAddress">
+    <!--@mbg.generated generated on Mon Aug 26 14:03:45 CST 2019.-->
+    <id column="id" property="id" />
+    <result column="belong_to" property="belongTo" />
+    <result column="en_name" property="enName" />
+    <result column="cn_name" property="cnName" />
+    <result column="level" property="level" />
+    <result column="baidu_map_lng" property="baiduMapLng" />
+    <result column="baidu_map_lat" property="baiduMapLat" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Mon Aug 26 14:03:45 CST 2019.-->
+    id, belong_to, en_name, cn_name, `level`, baidu_map_lng, baidu_map_lat
+  </sql>
+</mapper>
