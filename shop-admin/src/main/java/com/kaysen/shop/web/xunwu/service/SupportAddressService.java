@@ -1,11 +1,10 @@
 package com.kaysen.shop.web.xunwu.service;
 
-import com.kaysen.shop.base.service.ServiceMultiResult;
 import com.kaysen.shop.web.xunwu.bean.SupportAddress;
 
 import java.util.List;
 
-public interface SupportAddressService{
+public interface SupportAddressService {
 
     /**
      * 查询所有的城市
@@ -13,4 +12,10 @@ public interface SupportAddressService{
      */
     List<SupportAddress> findAllCities();
 
+    /**
+     * 查询支持的区域
+     * @param cityEnName
+     * @return
+     */
+    List<SupportAddress> findAllRegionsByCityName(String cityEnName);
 }

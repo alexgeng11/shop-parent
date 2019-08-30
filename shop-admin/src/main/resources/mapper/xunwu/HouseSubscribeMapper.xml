@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kaysen.shop.web.xunwu.dao.HouseSubscribeMapper">
+  <resultMap id="BaseResultMap" type="com.kaysen.shop.web.xunwu.bean.HouseSubscribe">
+    <!--@mbg.generated generated on Wed Aug 28 16:39:42 CST 2019.-->
+    <id column="id" property="id" />
+    <result column="house_id" property="houseId" />
+    <result column="user_id" property="userId" />
+    <result column="desc" property="desc" />
+    <result column="status" property="status" />
+    <result column="create_time" property="createTime" />
+    <result column="last_update_time" property="lastUpdateTime" />
+    <result column="order_time" property="orderTime" />
+    <result column="telephone" property="telephone" />
+    <result column="admin_id" property="adminId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Wed Aug 28 16:39:42 CST 2019.-->
+    id, house_id, user_id, `desc`, `status`, create_time, last_update_time, order_time, 
+    telephone, admin_id
+  </sql>
+</mapper>

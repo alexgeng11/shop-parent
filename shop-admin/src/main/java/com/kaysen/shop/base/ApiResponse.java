@@ -10,7 +10,7 @@ import java.util.HashMap;
  * @Created by ks.xu
  */
 public class ApiResponse implements Serializable {
-    private String code;
+    private Integer code;
     private String msg;
     private Object data;
     private Boolean flag;
@@ -46,7 +46,7 @@ public class ApiResponse implements Serializable {
         this.code = responseEnum.code;
         this.msg = responseEnum.msg;
     }
-    public ApiResponse(String code,Object data,String msg,Boolean flag) {
+    public ApiResponse(Integer code,Object data,String msg,Boolean flag) {
         super();
         this.flag = flag;
         this.code =code;
@@ -55,36 +55,32 @@ public class ApiResponse implements Serializable {
     }
 
     public static ApiResponse success(){
-        return new ApiResponse("200",new HashMap<>(),"操作成功",true);
+        return new ApiResponse(200,new HashMap<>(),"操作成功",true);
     }
     public static ApiResponse success(Object data){
-        return new ApiResponse("200",data,"操作成功",true);
+        return new ApiResponse(200,data,"操作成功",true);
     }
     public static ApiResponse success(String msg){
-        return new ApiResponse("200",new HashMap<>(),msg,true);
+        return new ApiResponse(200,new HashMap<>(),msg,true);
     }
     public static ApiResponse success(Object data,String msg){
-        return new ApiResponse("200",data,msg,true);
+        return new ApiResponse(200,data,msg,true);
     }
 
-    public static ApiResponse error(){
-        return new ApiResponse("200",new HashMap<>(),"操作失败",false);
-
-    }
-    public static ApiResponse error(String msg){
-        return new ApiResponse("200",new HashMap<>(),msg,false);
-
-    }
-    public static ApiResponse error(Object data){
-        return new ApiResponse("200",data,"操作失败",false);
-
-    }
     public static ApiResponse error(Object data,String msg){
-        return new ApiResponse("200",data,msg,false);
-
+        return new ApiResponse(200,data,msg,false);
+    }
+    public static ApiResponse error(Integer code,Object data,String msg){
+        return new ApiResponse(code,data,msg,false);
+    }
+    public static ApiResponse paramsError(Object data,String msg){
+        return new ApiResponse(400,data,msg,false);
+    }
+    public static ApiResponse paramsError(String msg){
+        return new ApiResponse(400,null,msg,false);
     }
     public static ApiResponse exception(){
-        return new ApiResponse("500",new HashMap<>(),"系统异常",false);
+        return new ApiResponse(500,new HashMap<>(),"系统异常",false);
 
     }
 
@@ -96,15 +92,15 @@ public class ApiResponse implements Serializable {
      * @DATE   2017年2月15日
      */
     public static enum ResponseEnum {
-        ERROR("404","操作失败",false),SUCCESS("200","操作成功",true),EXCEPTION("500","服务器繁忙",false);
+        ERROR(404,"操作失败",false),SUCCESS(200,"操作成功",true),EXCEPTION(500,"服务器繁忙",false);
 
-        private String code;
+        private Integer code;
         private String msg;
         private Boolean flag;
-        public String getCode() {
+        public Integer getCode() {
             return code;
         }
-        public void setCode(String code) {
+        public void setCode(Integer code) {
             this.code = code;
         }
         public String getMsg() {
@@ -119,7 +115,7 @@ public class ApiResponse implements Serializable {
         public void setFlag(Boolean flag) {
             this.flag = flag;
         }
-        private ResponseEnum(String code, String msg, Boolean flag) {
+        private ResponseEnum(Integer code, String msg, Boolean flag) {
             this.code = code;
             this.msg = msg;
             this.flag = flag;
@@ -131,11 +127,11 @@ public class ApiResponse implements Serializable {
 
 
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
